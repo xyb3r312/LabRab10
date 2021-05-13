@@ -1,0 +1,14 @@
+<section @toggle>
+  <h1 style="text-align: center">Лабораторная работа #10</h1>
+  <div class="control">
+    <button mat-raised-button color="primary"
+            *ngFor="let item of buttons; let i = index"
+            matTooltip="{{item.label}}"
+            matTooltipDisabled="{{i == 0 || receivedData}}"
+            [disabled]="i != 0 && !receivedData "
+            (click)="changeWindow(item.action)"
+    >{{item.name}}</button>
+  </div>
+  <div class="divider"></div>
+  <button (click)="closeMenu()" mat-raised-button color="warn">Завершить программу</button>
+</section>

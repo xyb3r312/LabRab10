@@ -1,0 +1,10 @@
+<section>
+  <h1 style="text-align: center">Данные</h1>
+  <div class="data">
+    <p>Радиус: {{data.radius}}</p>
+    <p>Площадь: {{square ? square : "не устанавливалась"}}</p>
+    <p>Длина: {{length ? length : "не устанавливалась"}}</p>
+  </div>
+  <div class="divider"></div>
+  <button mat-raised-button (click)="change(0)" color="primary">Вернуться в меню</button>
+</section>

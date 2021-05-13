@@ -1,0 +1,30 @@
+@import '~@angular/material/theming'
+
+@include mat-core()
+
+.divider
+  margin: 32px 0 16px 0
+  border-radius: 1px
+  background: gray
+  height: 1px
+  width: 100%
+
+.bg-blur
+  background: rgba(black, .4)
+  width: 100vw
+  height: 100vw
+  backdrop-filter: blur(2px)
+  position: fixed
+  z-index: 1
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+
+.setOrQuit
+  display: flex
+  justify-content: space-between
+
+  button
+    height: 44px
+    width: 48%

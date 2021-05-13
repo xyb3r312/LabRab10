@@ -1,0 +1,19 @@
+<section @toggle>
+  <h1 style="text-align: center">Ввод данных</h1>
+  <form [formGroup]="input" (ngSubmit)="submit()">
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>Радиус:</mat-label>
+      <input matInput formControlName="radius" placeholder="124">
+      <mat-error *ngIf="input.controls.radius.hasError('required')">Ввдедите необходимые данные</mat-error>
+      <mat-error *ngIf="input.controls.radius.hasError('pattern')">Ввдедите число</mat-error>
+    </mat-form-field>
+    <mat-checkbox formControlName="square">Площадь</mat-checkbox>
+    <mat-checkbox formControlName="length">Длина</mat-checkbox>
+  </form>
+  <div class="divider"></div>
+  <span style="color: limegreen" *ngIf="success">Данные успешно сохранены!</span>
+  <div class="setOrQuit">
+    <button mat-raised-button (click)="change(0)" color="primary">Вернуться в меню</button>
+    <button mat-raised-button (click)="submit()" [disabled]="input.invalid" color="primary">Сохранить изменения</button>
+  </div>
+</section>

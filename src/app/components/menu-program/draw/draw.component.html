@@ -1,0 +1,22 @@
+<section>
+  <h1 style="text-align: center">Вывод фигуры</h1>
+  <div class="common">
+    <div class="info">
+      <p>Нажмите на "Нарисовать круг", чтобы вывести круг на экран. Если радиус круга превышает
+        допустимые границы, вы всегда сможете изменить данные в разделе "Ввод данных". Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, suscipit?</p>
+      <div class="footer">
+        <div class="divider"></div>
+        <mat-error *ngIf="!canDraw">ОШИБКА! Нарисовать круг не получится, попробуйте уменьшить размер радиуса до 150 у.е. и меньше</mat-error>
+        <div class="setOrQuit">
+          <button mat-raised-button (click)="change(0)" color="primary">Вернуться в меню</button>
+          <button mat-raised-button (click)="change(1)" color="primary">Изменить данные</button>
+        </div>
+      </div>
+    </div>
+    <div class="draw">
+      <p>Область для вывода (150x150 px)</p>
+      <div class="layer"><div class="sqr" [@circling]="{value: 'smth', params : {rad: circle}}" *ngIf="showCircle"></div></div>
+      <button mat-raised-button (click)="toDraw()" [disabled]="!canDraw" color="accent">Нарисовать круг</button>
+    </div>
+  </div>
+</section>
